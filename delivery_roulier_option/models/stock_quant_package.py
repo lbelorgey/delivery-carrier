@@ -82,7 +82,7 @@ class StockQuantPackage(models.Model):
                 operation.qty_done or operation.product_qty
             )
             article["originCountry"] = product.origin_country_id.code
-            article["description"] = hs.description or product.name[:60]
+            article["description"] = hs.description[:60] or product.name[:60]
             article["hsCode"] = hs.hs_code
             article["value"] = operation.get_unit_price_for_customs()
 
